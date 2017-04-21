@@ -16,10 +16,10 @@ app.use(bodyParser.json());
 //MONGOLAB_URI
 
 app.get('/', (req,res) => {
-    if(!process.env.MONGODB_URI) {
-        return res.send('"MONGODB_URI" not set');
+    if(!process.env.MONGOLAB_URI) {
+        return res.send('"MONGOLAB_URI" not set');
     }
-    res.send(process.env.MONGODB_URI);
+    res.send(process.env.MONGOLAB_URI);
 });
 
 app.post('/todos', (req, res) => {
