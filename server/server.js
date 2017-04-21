@@ -13,15 +13,6 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-//MONGOLAB_URI
-
-app.get('/', (req,res) => {
-    if(!process.env.PROD_MONGODB) {
-        return res.send('"PROD_MONGODB" not set');
-    }
-    res.send(process.env.PROD_MONGODB);
-});
-
 app.post('/todos', (req, res) => {
     var todo = new Todo({
         text: req.body.text
